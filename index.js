@@ -57,7 +57,7 @@ bot.on('message', message =>{
     }
 });
 bot.on('ready', () =>{
-    bot.user.setActivity('Greeting everyone in Your Average Chat Server! | https://discord.gg/8eHTCVD ', {type: );
+    bot.user.setActivity('People join Your Average Chat Server! | https://discord.gg/8eHTCVD ', {type: 'WATCHING' } );
 })
 
-bot.login(process.env.TOKEN)
+bot.login(process.env.TOKEN) //using Heroku for getting our token.  
