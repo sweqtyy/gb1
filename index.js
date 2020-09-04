@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const token = 'NzUxMTk1ODM0NDY4NTMyMjk2.X1Fjow.8MG1r3iFr3cHRb7YTFtSESXfGwA';
+const token = process.env.TOKEN;
 
 const PREFIX = '!!';
 
@@ -58,7 +58,7 @@ bot.on('message', message =>{
     }
 });
 bot.on('ready', () =>{
-    bot.user.setActivity('Greeting everyone in Your Average Chat Server! | https://discord.gg/8eHTCVD ');
+    bot.user.setActivity('Greeting everyone in Your Average Chat Server! | https://discord.gg/8eHTCVD ', {type: );
 })
 
 bot.login(token)
