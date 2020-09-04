@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const token = process.env.TOKEN;
 
 const PREFIX = '!!';
 
@@ -61,4 +60,4 @@ bot.on('ready', () =>{
     bot.user.setActivity('Greeting everyone in Your Average Chat Server! | https://discord.gg/8eHTCVD ', {type: );
 })
 
-bot.login(token)
+bot.login(process.env.TOKEN)
