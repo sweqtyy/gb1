@@ -17,8 +17,7 @@ for(const file of commandFiles){
 
 bot.on('ready', () =>{
 
-    console.log(`Discord bot is now online, current version is: ` + botversion);
-    console.log(`###############################################################`)
+    console.log(`Discord bot is now online, current version is: ` + botversion); 
     bot.guilds.cache.forEach(server => {
         var memberCount = server.members.cache.filter(member => !member.user.bot).size;  
         console.log("This bot is in " + server.name + " , and the server has " + server.memberCount + " people in this guild.");
