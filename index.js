@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-
-
+const botversion = "v1.1"
 const PREFIX = '!!';
 const fs = require('fs');
  
@@ -15,8 +14,14 @@ for(const file of commandFiles){
 }
 
 bot.on('ready', () =>{
-    console.log('Ninja bot dude is online');
 
+    console.log(`Discord bot is now online, current version is: ` + botversion);
+    bot.guilds.cache.forEach(server => {
+        var memberCount = server.members.cache.filter(member => !member.user.bot).size;  
+        console.log("This bot is in " + server.name + " , and the server has " + server.memberCount + " people in this guild.");
+    });
+    
+    
 })
 
 bot.on("guildMemberAdd", (member) => {
@@ -74,11 +79,15 @@ bot.on('message', message =>{
 
     if(command === 'help'){
         bot.commands.get('commands').execute(message, args);
+    } else if(command === 'avatar'){
+        bot.commands.get('avatar').execute(message, args);
     }
 })
 bot.on('ready', () =>{
     
     bot.user.setActivity('People join Your Average Chat Server! | https://discord.gg/8eHTCVD ', {type: 'WATCHING' } );
+   
+    
 })
 
 bot.login(process.env.TOKEN) //using Heroku for getting our token.  
