@@ -1,9 +1,11 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const botversion = "v1.1"
+const botversion = "v1.1";
+const cguild = '750178747403206706';
+const ownerID = '271387672986124289';
 const PREFIX = '!!';
 const fs = require('fs');
- 
+
 bot.commands = new Discord.Collection();
  
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -16,6 +18,7 @@ for(const file of commandFiles){
 bot.on('ready', () =>{
 
     console.log(`Discord bot is now online, current version is: ` + botversion);
+    console.log(`###############################################################`)
     bot.guilds.cache.forEach(server => {
         var memberCount = server.members.cache.filter(member => !member.user.bot).size;  
         console.log("This bot is in " + server.name + " , and the server has " + server.memberCount + " people in this guild.");
@@ -26,15 +29,15 @@ bot.on('ready', () =>{
 
 bot.on("guildMemberAdd", (member) => {
 
-    const guild = bot.guilds.cache.get("750178747403206706");
+    const guild = bot.guilds.cache.get(cguild);
     var memberCount = guild.members.cache.filter(member => !member.user.bot).size;  
 
     const embed = new Discord.MessageEmbed()
 
-    .setTitle('Welcome to Your Average Chat Server')
+    .setTitle('Welcome to the server!')
     .setColor('#5cff00')
     .setDescription(`:wave: Welcome ${member.user}!
-     Welcome to Your Average Chat Server! Enjoy your time here.
+     Welcome to the server! Enjoy your time here.
      Current member count: ${memberCount}`)
      .setFooter(text = "made by sweqtyy#0001.", iconURL = 'https://media.giphy.com/media/JogsJZQiuEg5NvfRNL/giphy.gif')
         let channel = bot.channels.cache.get('750179461068226740');
@@ -43,7 +46,7 @@ bot.on("guildMemberAdd", (member) => {
 });
 
 bot.on("guildMemberRemove", (member) => {
-    const guild = bot.guilds.cache.get("750178747403206706");
+    const guild = bot.guilds.cache.get(cguild);
     var memberCount = guild.members.cache.filter(member => !member.user.bot).size;  
 
     const embed = new Discord.MessageEmbed()
@@ -83,6 +86,7 @@ bot.on('message', message =>{
         bot.commands.get('avatar').execute(message, args);
     }
 })
+
 bot.on('ready', () =>{
     
     bot.user.setActivity('People join Your Average Chat Server! | https://discord.gg/8eHTCVD ', {type: 'WATCHING' } );
