@@ -3,6 +3,16 @@ const bot = new Discord.Client();
 
 
 const PREFIX = '!!';
+const fs = require('fs');
+ 
+bot.commands = new Discord.Collection();
+ 
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+for(const file of commandFiles){
+    const command = require(`./commands/${file}`);
+ 
+    bot.commands.set(command.name, command);
+}
 
 bot.on('ready', () =>{
     console.log('Ninja bot dude is online');
@@ -56,7 +66,18 @@ bot.on('message', message =>{
             break;
     }
 });
+bot.on('message', message =>{
+    if(!message.content.startsWith(PREFIX) || message.author.bot) return;
+
+    const args = message.content.slice(PREFIX.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+
+    if(command === 'help'){
+        bot.commands.get('commands').execute(message, args);
+    }
+})
 bot.on('ready', () =>{
+    
     bot.user.setActivity('People join Your Average Chat Server! | https://discord.gg/8eHTCVD ', {type: 'WATCHING' } );
 })
 
