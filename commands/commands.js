@@ -9,7 +9,7 @@ module.exports = {
 
     .setTitle('Command Help')
     .setColor('#fff2f2')
-    .setDescription("Current commands available for this bot:\n**!!ping** - Pings the bot, checking its response time.\n**!!help** - Shows this menu.\n\nMore commands to use coming soon!")
+    .setDescription("Current commands available for this bot:\n**!!ping** - Pings the bot, checking its response time.\n**!!help** - Shows this menu.\n**!!avatar** - Shows users avatar. (To see another users avatar, simply mention them.)\n\nMore commands to use coming soon!")
      .setFooter(text = "made by sweqtyy#0001.", iconURL = 'https://media.giphy.com/media/JogsJZQiuEg5NvfRNL/giphy.gif')
         
 
