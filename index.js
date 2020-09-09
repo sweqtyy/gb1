@@ -83,6 +83,8 @@ bot.on('message', message =>{
         bot.commands.get('commands').execute(message, args);
     } else if(command === 'avatar'){
         bot.commands.get('avatar').execute(message, args);
+    } else if(command === 'slowmode'){
+        bot.commands.get('slowmode').execute(message, args);
     }
 })
 
