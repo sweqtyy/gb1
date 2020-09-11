@@ -22,13 +22,6 @@ module.exports = {
                     .setFooter(text = "made by sweqtyy#0001.", iconURL = 'https://media.giphy.com/media/JogsJZQiuEg5NvfRNL/giphy.gif')
                     return message.reply(embed)               
                  }
-                 if(time === 'off'){
-                 const embed = new Discord.MessageEmbed()
-                 .setDescription('Slowmode is now off! :thumbs_up:')
-                 .setColor('RANDOM')
-                 .setFooter(text = "made by sweqtyy#0001.", iconURL = 'https://media.giphy.com/media/JogsJZQiuEg5NvfRNL/giphy.gif')
-                 return message.reply(embed)       
-                   }        
          message.channel.setRateLimitPerUser(time)
          
         const embed = new Discord.MessageEmbed()
