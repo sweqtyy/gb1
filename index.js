@@ -39,7 +39,7 @@ bot.on("guildMemberAdd", (member) => {
      Welcome to the server! Enjoy your time here.
      Current member count: ${memberCount}`)
      .setFooter(text = "made by sweqtyy#0001.", iconURL = 'https://media.giphy.com/media/JogsJZQiuEg5NvfRNL/giphy.gif')
-        let channel = bot.channels.cache.get('750179461068226740');
+        let channel = bot.channels.cache.get('759507514391003147');
 
     channel.send(embed); 
 });
@@ -55,7 +55,7 @@ bot.on("guildMemberRemove", (member) => {
     .setDescription(`:wave: Goodbye, ${member.user}.
     Current member count: ${memberCount}`)
     .setFooter(text = "made by sweqtyy#0001.", iconURL = 'https://media.giphy.com/media/JogsJZQiuEg5NvfRNL/giphy.gif')
-    let channel = bot.channels.cache.get('750179461068226740');
+    let channel = bot.channels.cache.get('759507514391003147');
     channel.send(embed); 
 });
 bot.on('message', message =>{
