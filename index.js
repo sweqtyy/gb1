@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const botversion = "v1.1";
-const cguild = '750178747403206706';
+const cguild = '759506065162371122';
 const ownerID = '271387672986124289';
 const PREFIX = '!!';
 const fs = require('fs');
