@@ -90,7 +90,7 @@ bot.on('message', message =>{
 
 bot.on('ready', () =>{
     
-    bot.user.setActivity('People join Your Average Chat Server! | https://discord.gg/8eHTCVD ', {type: 'WATCHING' } );
+    bot.user.setActivity('People join Avas Server! | https://discord.gg/36DrmYj ', {type: 'WATCHING' } );
    
     
 })
