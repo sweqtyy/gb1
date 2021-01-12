@@ -5,7 +5,7 @@ const cguild = '759506065162371122';
 const ownerID = '271387672986124289';
 const PREFIX = '!!';
 const fs = require('fs');
-
+local token = 'NzUxMTk1ODM0NDY4NTMyMjk2.X1Fjow.Fx4nxsVxtgi7YAFolPZzxEMRj1s';
 bot.commands = new Discord.Collection();
  
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
